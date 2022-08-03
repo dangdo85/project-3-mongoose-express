@@ -1,3 +1,5 @@
+node_modules
+
 # Secrets not to be shared
 .env
 sei-upload_accessKeys.csv
