@@ -35,8 +35,7 @@ router.post('/sign-up', (req, res, next) => {
 		.then((credentials) => {
 			if (
 				!credentials ||
-				!credentials.password ||
-				credentials.password !== credentials.password_confirmation
+				!credentials.password //|| credentials.password !== credentials.password_confirmation
 			) {
 				throw new BadParamsError()
 			}
