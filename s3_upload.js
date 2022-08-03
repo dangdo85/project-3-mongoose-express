@@ -7,10 +7,13 @@ const s3 = new AWS.S3({apiVersion: '2006-03-01'})
 // Read the file elsewhere, accept it here
 module.exports = function (file) {
 
+    console.log(file.mimetype)
 const uploadParams = {
     Bucket: 'seir6-6-project3', 
-    Key: file.originalname, 
-    Body: file.buffer
+    Key: Date.now() + '_' + file.originalname, 
+    Body: file.buffer,
+    ACL: 'public-read',
+    ContentType: file.mimetype
 }
 
 return s3.upload(uploadParams).promise()
