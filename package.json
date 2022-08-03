@@ -1,7 +1,7 @@
 {
-  "name": "express-auth-mongoose-boilerplate",
+  "name": "spotlight-api",
   "version": "1.0.0",
-  "description": "Auth boilerplate for mongoose express using token auth",
+  "description": "spotlight-api backend",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
