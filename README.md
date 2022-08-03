@@ -79,7 +79,7 @@ We will be using React for our front end with RESTful routes and Moongose Expres
 - title: string
 - caption: string
 - image: url(?) w aws
-- like: boolean (reach goal)
+- like: (reach goal)
 - follow: boolean (reach goal)
 - timestamp:
 - owner: mongoose.Schema.Types.ObjectId
