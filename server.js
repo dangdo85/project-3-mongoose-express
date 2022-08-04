@@ -5,6 +5,7 @@ const cors = require('cors')
 
 // require route files
 const postRoutes = require('./app/routes/post_routes')
+const uploadRoutes = require('./app/routes/upload_routes')
 const userRoutes = require('./app/routes/user_routes')
 const commentRoutes = require('./app/routes/comment_routes')
 
@@ -67,6 +68,7 @@ app.use(requestLogger)
 
 // register route files
 app.use(postRoutes)
+app.use(uploadRoutes)
 app.use(userRoutes)
 app.use(commentRoutes)
 
