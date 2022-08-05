@@ -9,7 +9,7 @@ module.exports = function (file) {
 
     console.log(file.mimetype)
 const uploadParams = {
-    Bucket: 'seir6-6-project3', 
+    Bucket: process.env.BUCKET, 
     Key: Date.now() + '_' + file.originalname, 
     Body: file.buffer,
     ACL: 'public-read',

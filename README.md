@@ -1,7 +1,39 @@
-# Spotlight API Project 
+# SEIR Project 3 Spotlight app - API
+
+This is the backend app, designed to work with the client app.
+Repo to the client app is here:
+https://github.com/dangdo85/project-3-react
+
+## About Spotlight
 A social media app that allow users to "SPOTLIGHT" a major current event, a special moment of their day, or just an image that provided a fleeting moment of joy and share it with others.
 
-## User Story
+## Technology
+We will be using a Node server, with Moongose and Express for our back end app, that will support full CRUD actions. 
+The app will utilize AWS to store the uploaded images and MongoDB Atlas as the cloud database.
+Dependencies are all managed by NPM with emphasys on AWS-SDK package and Multer package to handle the upload to AWS.
+Links to all technologies will be provided at the end of this document.
+
+### Instalation instructions
+To use this app you will need to install all dependencies needed, and you can do that by running these commands in your command line:
+
+```
+$ npm install
+```
+```
+$npm start
+```
+
+This app will require an AWS account and an AWS bucket to be set up (see link to AWS below).
+You will also need to set up an envoroment file (.env) with the following items:
+ - AWS key ID
+ - AWS secret key ID
+ - AWS bucket name
+
+AWS_ACCESS_KEY_ID=" "
+AWS_SECRET_ACCESS_KEY=" "
+BUCKET=" "
+
+### User Story
 - As an unregistered user, I would like to view all images
 - As an unregistered user, I would like to sign up with email and password.
 - As a registered user, I would like to sign in with email and password.
@@ -26,69 +58,71 @@ A social media app that allow users to "SPOTLIGHT" a major current event, a spec
 - As a signed in user, I would like to 'like' images
 - As a signed in user, i would like to follow another user
 - As a signed in user, i would like to share another user's post
-
-## Technology
-We will be using React for our front end with RESTful routes and Moongose Express for our back end with CRUD actions. The app will use AWS to store the uploaded images, MongoDB Atlas as the database, and Heroku to launch.
-
-## ERD
-![](planning/ERD.png)
-
-## Wireframes
-![](planning/WireFrames.png)
-
+&nbsp;
+&nbsp;
 ## Route Table
-
-### Authentication
-| Verb   | URI Pattern         | Controller#Action |
-| ------ | ------------------- | ----------------- |
-| POST   | `/sign-up`          | `users#signup`    |
-| POST   | `/sign-in`          | `users#signin`    |
-| PATCH  | `/change-password/` | `users#changepw`  |
-| DELETE | `/sign-out/`        | `users#signout `  |
-
-### USER'S POST
-| Verb   | URI Pattern | Controller#Action    |
-| ------ | ----------- | -------------------- |
-| GET    | `/`         | `other users' index` |
-| GET    | `/:userId`  | `my index`           |
-| POST   | `/`         | `add`                |
-| PATCH  | `/:postId`  | `update`             |
-| DELETE | `/:postId`  | `destroy`            |
-
-### COMMENT
-| Verb   | URI Pattern           | Controller#Action |
-| ------ | --------------------- | ----------------- |
-| POST   | `/:postId/:commentId` | `add`             |
-| PATCH  | `/:postId/:commentId` | `update`          |
-| DELETE | `/:postId/:commentId` | `destroy`         |
-
+ - ### User Authentication
+    | Verb   | URI Pattern         | Controller#Action |
+    | ------ | ------------------- | ----------------- |
+    | POST   | `/sign-up`          | `users#signup`    |
+    | POST   | `/sign-in`          | `users#signin`    |
+    | PATCH  | `/change-password/` | `users#changepw`  |
+    | DELETE | `/sign-out/`        | `users#signout `  |
+ - ### Posts 
+    | Verb   | URI Pattern | Controller#Action    |
+    | ------ | ----------- | -------------------- |
+    | GET    | `/`         | `other users' index` |
+    | GET    | `/:userId`  | `my index`           |
+    | POST   | `/`         | `add`                |
+    | PATCH  | `/:postId`  | `update`             |
+    | DELETE | `/:postId`  | `destroy`            |
+ - ### Comments 
+    | Verb   | URI Pattern           | Controller#Action |
+    | ------ | --------------------- | ----------------- |
+    | POST   | `/:postId/:commentId` | `add`             |
+    | PATCH  | `/:postId/:commentId` | `update`          |
+    | DELETE | `/:postId/:commentId` | `destroy`         |  
+&nbsp;
+&nbsp;     
+### ERD
+![](planning/ERD.png)
+&nbsp;
+&nbsp;
 ## Schema
-### User
-- email: string
-    - required
-    - unique
-- username: string
-    - required
-    - unique
-- hashedPassword: string
-    - required
-- token: string
-- timestamps
+ - ### User
+    - email: string
+        - required
+        - unique
+    - username: string
+        - required
+        - unique
+    - hashedPassword: string
+        - required
+    - token: string
+    - timestamps
     
-### Post
-- title: string
-- caption: string
-- image: url(?) w aws
-- like: (reach goal)
-- follow: boolean (reach goal)
-- timestamp:
-- owner: mongoose.Schema.Types.ObjectId
-    - required
+ - ### Post
+    - title: string
+    - caption: string
+    - image: url(?) w aws
+    - like: (reach goal)
+    - follow: boolean (reach goal)
+    - timestamp:
+    - owner: mongoose.Schema.Types.ObjectId
+        - required
 
-### Comment (sub-schema)
-- comment: string (reach goal)
+ - ### Comment (sub-schema)
+    - comment: string (reach goal)
+&nbsp;
 
 ## Development Roles 
+- Team Manager: Dang Do
 - Front-End SME: Trevor Zou
 - Back-End SME: Shai Aloni 
-- Team Manager: Dang Do
+
+### Technology Links:
+
+###### AWS - https://aws.amazon.com/
+###### Mongoose JS - https://mongoosejs.com/
+###### MongoDB - https://www.mongodb.com/
+###### NPM JS - https://www.npmjs.com/
