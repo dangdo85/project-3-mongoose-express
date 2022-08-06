@@ -6,7 +6,7 @@ const mongooseBaseName = 'spotlight-api'
 
 // create the mongodb uri for development and test
 const database = {
-	development: `mongodb://localhost/${mongooseBaseName}-development`,
+	development: `mongodb://127.0.01/${mongooseBaseName}-development`,
 	test: `mongodb://localhost/${mongooseBaseName}-test`,
 }
 
