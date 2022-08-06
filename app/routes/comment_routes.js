@@ -22,7 +22,7 @@ router.post('/:postId', requireToken, (req, res, next) => {
         //after we found a post we want to take that post and add the comments
         .then(post => {
             //single post doc there is a field called comments
-            post.comments.push(req.body)
+            post.comments.unshift(req.body)
 
             // if we change a doc, we have to return and call .save() on the doc
             return post.save()
