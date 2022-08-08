@@ -71,17 +71,22 @@ BUCKET=" "
  - ### Posts 
     | Verb   | URI Pattern | Controller#Action    |
     | ------ | ----------- | -------------------- |
-    | GET    | `/`         | `other users' index` |
-    | GET    | `/:userId`  | `my index`           |
-    | POST   | `/`         | `add`                |
-    | PATCH  | `/:postId`  | `update`             |
-    | DELETE | `/:postId`  | `destroy`            |
+    | GET    | `/posts` | `other users' feed` |
+    | GET    | `/myPosts`  | `my feed` |
+    | POST   | `/posts` | `add` |
+    | PATCH  | `/posts/:postId`  | `update`|
+    | DELETE | `/posts/:postId`  | `destroy`|
  - ### Comments 
     | Verb   | URI Pattern           | Controller#Action |
     | ------ | --------------------- | ----------------- |
     | POST   | `/:postId/:commentId` | `add`             |
-    | PATCH  | `/:postId/:commentId` | `update`          |
     | DELETE | `/:postId/:commentId` | `destroy`         |  
+- ### Likes 
+    | Verb   | URI Pattern           | Controller#Action |
+    | ------ | --------------------- | ----------------- |
+    | POST   | `/likes/:postId` | `add like`             |
+    | DELETE | `/likes/:postId` | `remove like`         |  
+    
 &nbsp;
 &nbsp;     
 ### ERD
