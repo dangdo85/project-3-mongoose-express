@@ -2,7 +2,7 @@
 
 This is the backend app, designed to work with the client app.
 Repo to the client app is here:
-https://github.com/dangdo85/project-3-react
+https://github.com/shaialoni/project-3-react
 
 ## About Spotlight
 A social media app that allow users to "SPOTLIGHT" a major current event, a special moment of their day, or just an image that provided a fleeting moment of joy and share it with others.
