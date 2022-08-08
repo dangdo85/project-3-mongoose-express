@@ -8,6 +8,7 @@ const postRoutes = require('./app/routes/post_routes')
 const uploadRoutes = require('./app/routes/upload_routes')
 const userRoutes = require('./app/routes/user_routes')
 const commentRoutes = require('./app/routes/comment_routes')
+const likeRoutes = require('./app/routes/like_routes')
 
 // require middleware
 const errorHandler = require('./lib/error_handler')
@@ -70,7 +71,8 @@ app.use(requestLogger)
 app.use(postRoutes)
 app.use(uploadRoutes)
 app.use(userRoutes)
-app.use(commentRoutes)
+app.use(commentRoutes) 
+app.use(likeRoutes) 
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
