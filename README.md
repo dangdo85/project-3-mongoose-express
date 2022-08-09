@@ -13,7 +13,7 @@ The app will utilize AWS to store the uploaded images and MongoDB Atlas as the c
 Dependencies are all managed by NPM with emphasys on AWS-SDK package and Multer package to handle the upload to AWS.
 Links to all technologies will be provided at the end of this document.
 
-### Instalation instructions
+### Installation instructions
 To use this app you will need to install all dependencies needed, and you can do that by running these commands in your command line:
 
 ```
@@ -45,7 +45,7 @@ BUCKET=" "
 - As a signed in user, I would like to see the thumbnail of all images on AWS.
 - As a signed in user, I would like to comment on posts
 - As a signed in user, I would like to delete my comments
-- As a signed in user, I would like to update my comments
+- As a signed in user, I would like to 'like' images
 - As a signed in user, I would like to delete the reference of my image from the database.
 - As a signed in user, I would like to see the following data for any post:
     - date created/uploaded
@@ -109,15 +109,15 @@ BUCKET=" "
  - ### Post
     - title: string
     - caption: string
-    - image: url(?) w aws
-    - like: (reach goal)
+    - image: url (aws)
+    - likes: (list of user ids)
     - follow: boolean (reach goal)
     - timestamp:
     - owner: mongoose.Schema.Types.ObjectId
         - required
 
  - ### Comment (sub-schema)
-    - comment: string (reach goal)
+    - comment: string
 &nbsp;
 
 ## Development Roles 
